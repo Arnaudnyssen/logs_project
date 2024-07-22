@@ -1,0 +1,23 @@
+[2024-07-16T16:48:17.591+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-16T16:48:17.627+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: computer_data.insert_memory_data_task scheduled__2024-07-16T16:45:00+00:00 [queued]>
+[2024-07-16T16:48:17.651+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: computer_data.insert_memory_data_task scheduled__2024-07-16T16:45:00+00:00 [queued]>
+[2024-07-16T16:48:17.653+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-07-16T16:48:17.666+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): insert_memory_data_task> on 2024-07-16 16:45:00+00:00
+[2024-07-16T16:48:17.792+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=120) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-07-16T16:48:17.795+0000] {standard_task_runner.py:63} INFO - Started process 129 to run task
+[2024-07-16T16:48:17.796+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'computer_data', 'insert_memory_data_task', 'scheduled__2024-07-16T16:45:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/collect_to_postgre_dag.py', '--cfg-path', '/tmp/tmp7iebm2ms']
+[2024-07-16T16:48:17.807+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask insert_memory_data_task
+[2024-07-16T16:48:17.987+0000] {task_command.py:426} INFO - Running <TaskInstance: computer_data.insert_memory_data_task scheduled__2024-07-16T16:45:00+00:00 [running]> on host 22160f240dcf
+[2024-07-16T16:48:18.255+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='computer_data' AIRFLOW_CTX_TASK_ID='insert_memory_data_task' AIRFLOW_CTX_EXECUTION_DATE='2024-07-16T16:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-16T16:45:00+00:00'
+[2024-07-16T16:48:18.260+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-16T16:48:18.267+0000] {logging_mixin.py:188} INFO - Error: relation "memory" does not exist
+LINE 2:                INSERT INTO memory (date,Hour,minute,availabl...
+                                   ^
+[2024-07-16T16:48:18.268+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-07-16T16:48:18.269+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-16T16:48:18.285+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=computer_data, task_id=insert_memory_data_task, run_id=scheduled__2024-07-16T16:45:00+00:00, execution_date=20240716T164500, start_date=20240716T164817, end_date=20240716T164818
+[2024-07-16T16:48:18.342+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-07-16T16:48:18.373+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-07-16T16:48:18.375+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
