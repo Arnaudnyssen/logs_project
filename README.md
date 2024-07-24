@@ -34,15 +34,17 @@ git clone https://github.com/yourusername/Data_engineering_project_logs.git
 cd Data_engineering_project_logs
 ```
 Initialize the PostgreSQL database:
-
+```sh
 docker-compose up -d postgres
+```
 Initialize Airflow and other services:
-
-
+```sh
 docker-compose up -d
+```
+
 ## Project Structure
 
-
+```sh
 Data_engineering_project_logs/
 │
 ├── airflow/
@@ -62,7 +64,9 @@ Data_engineering_project_logs/
 ├── docker-compose.yml
 ├── README.md
 └── .env (optional for environment variables)
-Components
+```
+
+## Components
 
 Apache Airflow
 Apache Airflow is used to schedule and manage the tasks of collecting CPU and memory logs every minute. The DAG script is located in airflow/dags/collect_to_postgre_dag.py.
@@ -98,7 +102,7 @@ Access Flower
 
 Flower can be accessed at http://localhost:5555.
 
-Docker Compose Configuration
+## Docker Compose Configuration
 
 The docker-compose.yml file configures the services for this project. Below are some important sections:
 
@@ -159,7 +163,7 @@ volumes:
   pgdata:
   logs:
     driver: local
-Usage
+## Usage
 
 Start all services:
 
@@ -172,11 +176,12 @@ Access the Airflow web UI at http://localhost:8080.
 Access pgAdmin at http://localhost:5050.
 Access the Streamlit app at http://localhost:8501.
 Access Flower at http://localhost:5555.
-Customization
+## Customization
 
 Modify the Airflow DAG in airflow/dags/collect_to_postgre_dag.py as needed.
 Customize the Streamlit app in streamlit/app.py.
-Troubleshooting
+
+## Troubleshooting
 
 Ensure Docker and Docker Compose are properly installed.
 
