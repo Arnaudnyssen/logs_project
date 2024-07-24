@@ -36,12 +36,12 @@ cd Data_engineering_project_logs
 Initialize the PostgreSQL database:
 
 docker-compose up -d postgres
-
 Initialize Airflow and other services:
 
-docker-compose up -d
 
+docker-compose up -d
 Project Structure
+
 
 Data_engineering_project_logs/
 │
@@ -62,7 +62,6 @@ Data_engineering_project_logs/
 ├── docker-compose.yml
 ├── README.md
 └── .env (optional for environment variables)
-
 Components
 
 Apache Airflow
@@ -73,7 +72,6 @@ Starting Airflow
 To start the Airflow web server and scheduler, run:
 
 docker-compose up -d airflow-webserver airflow-scheduler
-
 PostgreSQL and pgAdmin
 PostgreSQL is used to store the logs in a database named data_computer with tables cpu and memory.
 
@@ -91,7 +89,6 @@ Running Streamlit
 To run the Streamlit app, execute:
 
 docker-compose up -d streamlit
-
 The app can be accessed at http://localhost:8501.
 
 Flower
@@ -162,16 +159,15 @@ volumes:
   pgdata:
   logs:
     driver: local
-
 Usage
 
 Start all services:
 
 docker-compose up -d
-
 Verify that all containers are running:
-docker-compose ps
 
+
+docker-compose ps
 Access the Airflow web UI at http://localhost:8080.
 Access pgAdmin at http://localhost:5050.
 Access the Streamlit app at http://localhost:8501.
@@ -180,7 +176,6 @@ Customization
 
 Modify the Airflow DAG in airflow/dags/collect_to_postgre_dag.py as needed.
 Customize the Streamlit app in streamlit/app.py.
-
 Troubleshooting
 
 Ensure Docker and Docker Compose are properly installed.
@@ -188,10 +183,4 @@ Ensure Docker and Docker Compose are properly installed.
 Check logs for any errors:
 
 docker-compose logs
-
 If the Airflow webserver or scheduler is not starting, verify the configuration in docker-compose.yml.
-
-
-
-
-
