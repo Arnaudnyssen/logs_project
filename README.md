@@ -32,7 +32,7 @@ Clone the repository:
 ```sh
 git clone https://github.com/yourusername/Data_engineering_project_logs.git
 cd Data_engineering_project_logs
-
+```
 Initialize the PostgreSQL database:
 
 docker-compose up -d postgres
@@ -40,7 +40,7 @@ Initialize Airflow and other services:
 
 
 docker-compose up -d
-Project Structure
+## Project Structure
 
 
 Data_engineering_project_logs/
