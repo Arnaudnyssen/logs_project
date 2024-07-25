@@ -43,7 +43,7 @@ docker-compose up -d
 ```
 
 ## Project Structure
-
+```
 Data_engineering_project_logs/
 │
 ├── airflow/
@@ -63,7 +63,7 @@ Data_engineering_project_logs/
 ├── docker-compose.yml
 ├── README.md
 └── .env (optional for environment variables)
-
+```
 
 ## Components
 
@@ -175,8 +175,9 @@ docker-compose up -d
 ```
 Verify that all containers are running:
 
-
+```sh
 docker-compose ps
+```
 Access the Airflow web UI at http://localhost:8080.
 Access pgAdmin at http://localhost:5050.
 Access the Streamlit app at http://localhost:8501.
