@@ -44,7 +44,6 @@ docker-compose up -d
 
 ## Project Structure
 
-```sh
 Data_engineering_project_logs/
 │
 ├── airflow/
@@ -64,18 +63,20 @@ Data_engineering_project_logs/
 ├── docker-compose.yml
 ├── README.md
 └── .env (optional for environment variables)
-```
+
 
 ## Components
 
 Apache Airflow
-Apache Airflow is used to schedule and manage the tasks of collecting CPU and memory logs every minute. The DAG script is located in airflow/dags/collect_to_postgre_dag.py.
+Apache Airflow is used to schedule and manage the tasks of collecting CPU and memory logs every minute. 
+The DAG script is located in airflow/dags/collect_to_postgre_dag.py.
 
 Starting Airflow
 
 To start the Airflow web server and scheduler, run:
-
+```sh
 docker-compose up -d airflow-webserver airflow-scheduler
+```
 PostgreSQL and pgAdmin
 PostgreSQL is used to store the logs in a database named data_computer with tables cpu and memory.
 
@@ -86,13 +87,16 @@ pgAdmin can be accessed at http://localhost:5050 with the following default cred
 Email: airflow@hotmail.be
 Password: airflow
 Streamlit App
-The Streamlit app visualizes the logs stored in PostgreSQL. It displays the last 10 minutes of data in graphical form. You can select which graph to display by clicking on a button in the Streamlit app.
+The Streamlit app visualizes the logs stored in PostgreSQL.
+It displays the last 10 minutes of data in graphical form.
+You can select which graph to display by clicking on a button in the Streamlit app.
 
 Running Streamlit
 
 To run the Streamlit app, execute:
-
+```sh
 docker-compose up -d streamlit
+```
 The app can be accessed at http://localhost:8501.
 
 Flower
@@ -160,14 +164,15 @@ services:
       - postgres
 
 volumes:
-  pgdata:
-  logs:
-    driver: local
+   postgres-db-volume:
+   pgadmin-data:
+
 ## Usage
 
 Start all services:
-
+```sh
 docker-compose up -d
+```
 Verify that all containers are running:
 
 
@@ -186,6 +191,7 @@ Customize the Streamlit app in streamlit/app.py.
 Ensure Docker and Docker Compose are properly installed.
 
 Check logs for any errors:
-
+```sh
 docker-compose logs
+```
 If the Airflow webserver or scheduler is not starting, verify the configuration in docker-compose.yml.
