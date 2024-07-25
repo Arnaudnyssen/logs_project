@@ -1,6 +1,5 @@
-# logs_project
 
-## Data Engineering Project Logs
+# Data Engineering Project Logs
 
 This project is designed to monitor and display the CPU and memory usage of your computer. The data is collected using Apache Airflow, stored in a PostgreSQL database, and visualized using a Streamlit app.
 
@@ -86,12 +85,12 @@ pgAdmin can be accessed at http://localhost:5050 with the following default cred
 
 Email: airflow@hotmail.be  
 Password: airflow  
-Streamlit App  
+### Streamlit App  
 The Streamlit app visualizes the logs stored in PostgreSQL.  
 It displays the last 10 minutes of data in graphical form.  
 You can select which graph to display by clicking on a button in the Streamlit app.  
-
-### Running Streamlit  
+ 
+Running Streamlit  
 
 To run the Streamlit app, execute:  
 ```sh
