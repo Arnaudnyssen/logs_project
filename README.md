@@ -1,7 +1,7 @@
 
 # Data Engineering Project Logs
 
-This project is designed to monitor and display the CPU and memory usage of your computer. The data is collected using Apache Airflow, stored in a PostgreSQL database, and visualized using a Streamlit app.
+This project is designed to monitor and display the CPU and memory usage of your computer. The data is collected using Apache Airflow every minute, stored in a PostgreSQL database, and visualized using a Streamlit app.
 
 ## Table of Contents
 1. [Prerequisites](#prerequisites)
