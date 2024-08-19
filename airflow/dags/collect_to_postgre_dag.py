@@ -21,8 +21,8 @@ default_args = {
 # Define the DAG to run every minute
 dag = DAG(
     'computer_data',
-    description='DAG to insert  memory, battery, and CPU data into PostgreSQL every minute',
-    schedule_interval='*/3 * * * *',  # Run every 3 minute
+    description='DAG to insert  memory and CPU data into PostgreSQL every minute',
+    schedule_interval='*/1 * * * *',  # Run every minute
     default_args=default_args,
     catchup=False
 )
